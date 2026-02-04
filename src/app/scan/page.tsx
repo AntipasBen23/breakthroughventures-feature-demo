@@ -40,13 +40,13 @@ export default function QRScanner() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-950 via-blue-950 to-slate-900 text-white">
+    <div className="min-h-screen bg-gradient-to-br from-slate-950 via-blue-950 to-slate-900 text-white pt-24">
       {!scannedStartup ? (
         // Scanner View
-        <div className="flex flex-col items-center justify-center min-h-screen p-8">
+        <div className="flex flex-col items-center justify-center min-h-[calc(100vh-6rem)] px-8">
           {!showScanner ? (
             // Welcome Screen
-            <div className="text-center max-w-md">
+            <div className="text-center max-w-md w-full">
               <div className="w-32 h-32 mx-auto mb-8 bg-gradient-to-br from-blue-500 to-purple-600 rounded-3xl flex items-center justify-center">
                 <span className="text-6xl">📱</span>
               </div>
@@ -134,7 +134,7 @@ export default function QRScanner() {
         </div>
       ) : (
         // Scanned Startup Detail
-        <div className="min-h-screen p-8 flex items-center justify-center">
+        <div className="min-h-[calc(100vh-6rem)] px-8 py-8 flex items-center justify-center">
           {!interestSaved ? (
             <div className="max-w-2xl w-full bg-slate-900 rounded-2xl p-8 border border-white/10">
               {/* Success Animation */}

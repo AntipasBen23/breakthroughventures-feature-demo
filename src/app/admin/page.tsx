@@ -57,90 +57,93 @@ export default function AdminDashboard() {
   });
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-950 via-blue-950 to-slate-900 text-white p-8">
-      {/* Header */}
-      <div className="flex items-center justify-between mb-8">
-        <div>
-          <h1 className="text-3xl font-bold mb-2">Breakthrough Command Center</h1>
-          <p className="text-gray-400">Real-time Demo Day monitoring & analytics</p>
-        </div>
-        <div className="flex items-center gap-3">
-          <div className="flex items-center gap-2 px-3 py-2 bg-green-500/20 text-green-400 rounded-lg">
-            <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
-            <span className="text-sm font-medium">System Live</span>
+    <div className="min-h-screen bg-gradient-to-br from-slate-950 via-blue-950 to-slate-900 text-white pt-24">
+      <div className="max-w-7xl mx-auto px-8 pb-8">
+        {/* Header */}
+        <div className="flex items-center justify-between mb-8">
+          <div>
+            <h1 className="text-3xl font-bold mb-2">Breakthrough Command Center</h1>
+            <p className="text-gray-400">Real-time Demo Day monitoring & analytics</p>
+          </div>
+          <div className="flex items-center gap-3">
+            <div className="flex items-center gap-2 px-3 py-2 bg-green-500/20 text-green-400 rounded-lg">
+              <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
+              <span className="text-sm font-medium">System Live</span>
+            </div>
           </div>
         </div>
-      </div>
 
-      {/* View Tabs */}
-      <div className="flex gap-2 mb-8">
-        <button
-          onClick={() => setSelectedView('overview')}
-          className={`px-4 py-2 rounded-lg transition-all ${
-            selectedView === 'overview'
-              ? 'bg-blue-500 text-white'
-              : 'bg-white/5 text-gray-400 hover:bg-white/10'
-          }`}
-        >
-          Overview
-        </button>
-        <button
-          onClick={() => setSelectedView('startups')}
-          className={`px-4 py-2 rounded-lg transition-all ${
-            selectedView === 'startups'
-              ? 'bg-blue-500 text-white'
-              : 'bg-white/5 text-gray-400 hover:bg-white/10'
-          }`}
-        >
-          Startups
-        </button>
-        <button
-          onClick={() => setSelectedView('investors')}
-          className={`px-4 py-2 rounded-lg transition-all ${
-            selectedView === 'investors'
-              ? 'bg-blue-500 text-white'
-              : 'bg-white/5 text-gray-400 hover:bg-white/10'
-          }`}
-        >
-          Investors
-        </button>
-        <button
-          onClick={() => setSelectedView('analytics')}
-          className={`px-4 py-2 rounded-lg transition-all ${
-            selectedView === 'analytics'
-              ? 'bg-blue-500 text-white'
-              : 'bg-white/5 text-gray-400 hover:bg-white/10'
-          }`}
-        >
-          Analytics
-        </button>
-      </div>
+        {/* View Tabs */}
+        <div className="flex gap-2 mb-8">
+          <button
+            onClick={() => setSelectedView('overview')}
+            className={`px-4 py-2 rounded-lg transition-all ${
+              selectedView === 'overview'
+                ? 'bg-blue-500 text-white'
+                : 'bg-white/5 text-gray-400 hover:bg-white/10'
+            }`}
+          >
+            Overview
+          </button>
+          <button
+            onClick={() => setSelectedView('startups')}
+            className={`px-4 py-2 rounded-lg transition-all ${
+              selectedView === 'startups'
+                ? 'bg-blue-500 text-white'
+                : 'bg-white/5 text-gray-400 hover:bg-white/10'
+            }`}
+          >
+            Startups
+          </button>
+          <button
+            onClick={() => setSelectedView('investors')}
+            className={`px-4 py-2 rounded-lg transition-all ${
+              selectedView === 'investors'
+                ? 'bg-blue-500 text-white'
+                : 'bg-white/5 text-gray-400 hover:bg-white/10'
+            }`}
+          >
+            Investors
+          </button>
+          <button
+            onClick={() => setSelectedView('analytics')}
+            className={`px-4 py-2 rounded-lg transition-all ${
+              selectedView === 'analytics'
+                ? 'bg-blue-500 text-white'
+                : 'bg-white/5 text-gray-400 hover:bg-white/10'
+            }`}
+          >
+            Analytics
+          </button>
+        </div>
 
-      {selectedView === 'overview' && (
-        <>
-          {/* Key Metrics */}
-          <div className="grid grid-cols-4 gap-4 mb-8">
-            <div className="bg-white/5 backdrop-blur-sm rounded-lg p-6 border border-white/10">
-              <div className="text-sm text-gray-400 mb-1">Total Interests</div>
-              <div className="text-4xl font-bold text-blue-400 mb-2">{totalInterests}</div>
-              <div className="text-xs text-gray-400">{strongInterests} strong interest</div>
+        {selectedView === 'overview' && (
+          <>
+            {/* Key Metrics */}
+            <div className="grid grid-cols-4 gap-4 mb-8">
+              <div className="bg-white/5 backdrop-blur-sm rounded-lg p-6 border border-white/10">
+                <div className="text-sm text-gray-400 mb-1">Total Interests</div>
+                <div className="text-4xl font-bold text-blue-400 mb-2">{totalInterests}</div>
+                <div className="text-xs text-gray-400">{strongInterests} strong interest</div>
+              </div>
+              <div className="bg-white/5 backdrop-blur-sm rounded-lg p-6 border border-white/10">
+                <div className="text-sm text-gray-400 mb-1">Meetings Scheduled</div>
+                <div className="text-4xl font-bold text-green-400 mb-2">{totalMeetings}</div>
+                <div className="text-xs text-gray-400">{confirmedMeetings} confirmed</div>
+              </div>
+              <div className="bg-white/5 backdrop-blur-sm rounded-lg p-6 border border-white/10">
+                <div className="text-sm text-gray-400 mb-1">Conversion Rate</div>
+                <div className="text-4xl font-bold text-purple-400 mb-2">{conversionRate}%</div>
+                <div className="text-xs text-gray-400">Interest → Strong</div>
+              </div>
+              <div className="bg-white/5 backdrop-blur-sm rounded-lg p-6 border border-white/10">
+                <div className="text-sm text-gray-400 mb-1">Avg Momentum</div>
+                <div className="text-4xl font-bold text-orange-400 mb-2">{avgMomentumScore}</div>
+                <div className="text-xs text-gray-400">Across all startups</div>
+              </div>
             </div>
-            <div className="bg-white/5 backdrop-blur-sm rounded-lg p-6 border border-white/10">
-              <div className="text-sm text-gray-400 mb-1">Meetings Scheduled</div>
-              <div className="text-4xl font-bold text-green-400 mb-2">{totalMeetings}</div>
-              <div className="text-xs text-gray-400">{confirmedMeetings} confirmed</div>
-            </div>
-            <div className="bg-white/5 backdrop-blur-sm rounded-lg p-6 border border-white/10">
-              <div className="text-sm text-gray-400 mb-1">Conversion Rate</div>
-              <div className="text-4xl font-bold text-purple-400 mb-2">{conversionRate}%</div>
-              <div className="text-xs text-gray-400">Interest → Strong</div>
-            </div>
-            <div className="bg-white/5 backdrop-blur-sm rounded-lg p-6 border border-white/10">
-              <div className="text-sm text-gray-400 mb-1">Avg Momentum</div>
-              <div className="text-4xl font-bold text-orange-400 mb-2">{avgMomentumScore}</div>
-              <div className="text-xs text-gray-400">Across all startups</div>
-            </div>
-          </div>
+            
+            {/* ... REST OF YOUR CODE STAYS EXACTLY THE SAME ... */}
 
           <div className="grid grid-cols-3 gap-6">
             {/* Real-Time Event Stream */}
@@ -443,6 +446,7 @@ export default function AdminDashboard() {
           </div>
         </div>
       )}
+    </div>
     </div>
   );
 }
